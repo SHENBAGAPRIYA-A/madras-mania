@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 96%;
+    --foreground: 0 40% 15%;
+    --card: 35 40% 95%;
+    --card-foreground: 0 40% 15%;
+    --popover: 35 40% 95%;
+    --popover-foreground: 0 40% 15%;
+    --primary: 0 70% 28%;
+    --primary-foreground: 40 60% 95%;
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 0 40% 15%;
+    --muted: 30 20% 90%;
+    --muted-foreground: 0 15% 45%;
+    --accent: 42 85% 50%;
+    --accent-foreground: 0 40% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 25% 85%;
+    --input: 30 25% 85%;
+    --ring: 0 70% 28%;
+    --radius: 0.75rem;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --feedback-like: 142 76% 36%;
+    --feedback-like-bg: 142 76% 95%;
+    --feedback-dislike: 0 84% 60%;
+    --feedback-dislike-bg: 0 84% 95%;
+    --star-active: 42 85% 50%;
+    --star-inactive: 30 13% 85%;
+    --sidebar-background: 35 40% 95%;
+    --sidebar-foreground: 0 40% 15%;
+    --sidebar-primary: 0 70% 28%;
+    --sidebar-primary-foreground: 40 60% 95%;
+    --sidebar-accent: 30 30% 90%;
+    --sidebar-accent-foreground: 0 40% 15%;
+    --sidebar-border: 30 25% 85%;
+    --sidebar-ring: 0 70% 28%;
+  }
+
+  .dark {
+    --background: 0 30% 8%;
+    --foreground: 40 60% 95%;
+    --card: 0 30% 12%;
+    --card-foreground: 40 60% 95%;
+    --popover: 0 30% 12%;
+    --popover-foreground: 40 60% 95%;
+    --primary: 42 85% 50%;
+    --primary-foreground: 0 30% 8%;
+    --secondary: 0 30% 16%;
+    --secondary-foreground: 40 60% 95%;
+    --muted: 0 20% 16%;
+    --muted-foreground: 30 20% 60%;
+    --accent: 42 85% 50%;
+    --accent-foreground: 0 30% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 20% 20%;
+    --input: 0 20% 20%;
+    --ring: 42 85% 50%;
+    --success: 142 76% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    --feedback-like: 142 76% 40%;
+    --feedback-like-bg: 142 30% 15%;
+    --feedback-dislike: 0 84% 60%;
+    --feedback-dislike-bg: 0 40% 15%;
+    --star-active: 42 85% 55%;
+    --star-inactive: 0 20% 25%;
+    --sidebar-background: 0 30% 12%;
+    --sidebar-foreground: 40 60% 95%;
+    --sidebar-primary: 42 85% 50%;
+    --sidebar-primary-foreground: 0 30% 8%;
+    --sidebar-accent: 0 30% 16%;
+    --sidebar-accent-foreground: 40 60% 95%;
+    --sidebar-border: 0 20% 20%;
+    --sidebar-ring: 42 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Clean professional background - restaurant image */
+.clean-bg {
+  background: url('/src/assets/restaurant-bg.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+.clean-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: hsl(0 30% 8% / 0.6); */
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, hsl(187 85% 43% / 0.03), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 60%, hsl(187 85% 43% / 0.03), transparent);
+  pointer-events: none;
+}
+
+/* Clean card styling - warm cream */
+.clean-card {
+  background: hsl(35 40% 95%);
+  border: 1px solid hsl(30 25% 85%);
+  box-shadow: 
+    0 4px 6px -1px hsl(0 40% 15% / 0.08),
+    0 10px 25px -5px hsl(0 40% 15% / 0.12);
+}
+
+/* Feedback button styling */
+.feedback-btn {
+  background: hsl(35 40% 97%);
+  border: 2px solid hsl(30 25% 85%);
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  border-color: hsl(0 70% 28%);
+  box-shadow: 0 4px 12px hsl(0 70% 28% / 0.15);
+}
+
+.feedback-btn-active {
+  background: hsl(0 70% 28%);
+  border-color: hsl(0 70% 28%);
+}
+
+/* Checkbox item styling */
+.checkbox-item {
+  background: hsl(35 40% 97%);
+  border: 1px solid hsl(30 25% 85%);
+  transition: all 0.2s ease;
+}
+
+.checkbox-item:hover {
+  border-color: hsl(0 70% 28% / 0.5);
+}
+
+.checkbox-item-active {
+  background: hsl(0 70% 95%);
+  border-color: hsl(0 70% 28%);
+}
+
+/* Submit button */
+.submit-btn {
+  background: hsl(0 70% 28%);
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: hsl(0 70% 22%);
+  box-shadow: 0 4px 12px hsl(0 70% 28% / 0.3);
+}
