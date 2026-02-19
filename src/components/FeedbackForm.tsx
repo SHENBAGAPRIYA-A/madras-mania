@@ -33,12 +33,12 @@ const translations = {
     thankYouSubMessage: "Your feedback helps us improve and serve you better.",
     closeMessage: "You may now safely close this page.",
     checkboxes: [
-      "Difficulties in booking an appointment",
+      "Difficulties in placing an order",
       "Long waiting time",
-      "Staff friendliness or care",
-      "Quality of treatment",
+      "Staff friendliness or service",
+      "Food quality or taste",
       "Billing or payment issues",
-      "Online/digital process"
+      "Cleanliness or ambiance"
     ]
   },
   de: {
@@ -65,12 +65,12 @@ const translations = {
     thankYouSubMessage: "Ihr Feedback hilft uns, uns zu verbessern und Sie besser zu bedienen.",
     closeMessage: "Sie können diese Seite jetzt schließen.",
     checkboxes: [
-      "Schwierigkeiten bei der Terminbuchung",
+      "Schwierigkeiten bei der Bestellung",
       "Lange Wartezeit",
-      "Freundlichkeit oder Fürsorge des Personals",
-      "Qualität der Behandlung",
-      "Abrechnungs- oder Zahlungsprobleme",
-      "Online-/digitaler Prozess"
+      "Freundlichkeit und Service des Personals",
+      "Qualität und Geschmack der Speisen",
+      "Probleme mit der Abrechnung oder Bezahlung",
+      "Sauberkeit und Ambiente"
     ]
   }
 };
