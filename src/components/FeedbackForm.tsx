@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThumbsUp, ThumbsDown, Send, Globe, Check, Lock, Sparkles, ChevronRight, ArrowLeft } from "lucide-react";
+import { ThumbsUp, ThumbsDown, Send, Globe, Check, Lock, Sparkles, ChevronRight, ArrowLeft,Clock,Users,CreditCard,Utensils,ShoppingBag ,Sparkles as CleanIcon} from "lucide-react";
 import { submitLike, submitReview } from "@/lib/firebase";
 import { toast } from "sonner";
 import madrasmania from "@/assets/madras-mania.png";
@@ -8,6 +8,22 @@ import madrasmania from "@/assets/madras-mania.png";
 type Language = "en" | "de";
 type FeedbackType = "like" | "dislike" | null;
 
+const improvementIcons: Record<string, any> = {
+  "Difficulties in placing an order": ShoppingBag,
+  "Long waiting time": Clock,
+  "Staff friendliness or service": Users,
+  "Food quality or taste": Utensils,
+  "Billing or payment issues": CreditCard,
+  "Cleanliness or ambiance": CleanIcon,
+
+  // German mapping
+  "Schwierigkeiten bei der Bestellung": ShoppingBag,
+  "Lange Wartezeit": Clock,
+  "Freundlichkeit und Service des Personals": Users,
+  "Qualität und Geschmack der Speisen": Utensils,
+  "Probleme mit der Abrechnung oder Bezahlung": CreditCard,
+  "Sauberkeit und Ambiente": CleanIcon
+};
 const translations = {
   en: {
     title: "How was your experience today?",
@@ -378,7 +394,7 @@ const FeedbackForm = () => {
                       improvements.includes(item) ? "checkbox-item-active" : ""
                     }`}
                   >
-                    <div
+                    {/* <div
                       className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all flex-shrink-0 ${
                         improvements.includes(item)
                           ? "bg-primary border-primary"
@@ -388,7 +404,19 @@ const FeedbackForm = () => {
                       {improvements.includes(item) && (
                         <Check className="w-3 h-3 text-primary-foreground" />
                       )}
-                    </div>
+                    </div> */}
+                    <div
+  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all flex-shrink-0 ${
+    improvements.includes(item)
+      ? "bg-primary text-primary-foreground"
+      : "bg-muted text-primary"
+  }`}
+>
+  {(() => {
+    const Icon = improvementIcons[item];
+    return Icon ? <Icon className="w-5 h-5" /> : null;
+  })()}
+</div>
                     <input
                       type="checkbox"
                       checked={improvements.includes(item)}
